@@ -9,9 +9,4 @@ export default defineConfig({
   integrations: [
     keystatic(),
   ],
-  image: {
-    service: {
-      entrypoint: 'astro/assets/services/sharp',
-    },
-  },
 });
