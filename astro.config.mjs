@@ -4,7 +4,7 @@ import keystatic from '@keystatic/astro';
 
 export default defineConfig({
   site: 'https://myblog-2tg.pages.dev', 
-  output: 'static', // KEMBALIKAN KE STATIC
+  output: 'server', // UBAH JADI SERVER
   adapter: cloudflare(),
   integrations: [
     keystatic(),
