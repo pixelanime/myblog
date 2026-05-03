@@ -4,10 +4,7 @@ import keystatic from '@keystatic/astro';
 
 export default defineConfig({
   site: 'https://myblog-2tg.pages.dev', 
-  
-  // HAPUS BAGIAN EXPERIMENTAL TADI
-  
-  output: 'static',
+  output: 'static', // KEMBALIKAN KE STATIC
   adapter: cloudflare(),
   integrations: [
     keystatic(),
