@@ -3,12 +3,12 @@ import cloudflare from '@astrojs/cloudflare';
 import keystatic from '@keystatic/astro';
 
 export default defineConfig({
-  output: 'static', // atau 'server' jika butuh SSR
-  adapter: cloudflare({
-    platformProxy: {
-      enabled: true,
-    },
-  }),
+  site: 'https://myblog.pages.dev', 
+  
+  // HAPUS BAGIAN EXPERIMENTAL TADI
+  
+  output: 'static',
+  adapter: cloudflare(),
   integrations: [
     keystatic(),
   ],

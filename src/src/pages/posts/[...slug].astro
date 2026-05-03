@@ -1,0 +1,34 @@
+---
+// SESUAIKAN NAMA LAYOUT
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout title={post.data.title}>
+  <main style="max-width: 700px; margin: 0 auto; padding: 20px; font-family: Arial, sans-serif;">
+    <a href="/" style="color: #4f46e5; text-decoration: none;">← Kembali ke Beranda</a>
+    
+    <article>
+      <h1 style="margin-bottom: 5px;">{post.data.title}</h1>
+      <small style="color: #777; display: block; margin-bottom: 30px;">
+        📅 {post.data.date.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}
+      </small>
+
+      <!-- Ini yang akan menampilkan isi tulisan Markdown -->
+      <div class="prose">
+        <Content />
+      </div>
+    </article>
+  </main>
+</Layout>
