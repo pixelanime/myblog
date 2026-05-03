@@ -4,9 +4,14 @@ import keystatic from '@keystatic/astro';
 
 export default defineConfig({
   site: 'https://myblog-2tg.pages.dev', 
-  output: 'server', // UBAH JADI SERVER
+  output: 'server',
   adapter: cloudflare(),
   integrations: [
     keystatic(),
   ],
+  image: {
+    service: {
+      entrypoint: 'astro/assets/services/sharp',
+    },
+  },
 });
