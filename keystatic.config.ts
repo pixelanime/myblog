@@ -3,7 +3,7 @@ import { config, collection } from '@keystatic/core';
 export default config({
   storage: {
     kind: 'github',
-    repo: 'peroin/myblog', // GANTI dengan repo kamu
+    repo: 'pixelanime/myblog', // GANTI dengan repo kamu
   },
   collections: {
     posts: collection({
