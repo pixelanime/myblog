@@ -3,7 +3,7 @@ import cloudflare from '@astrojs/cloudflare';
 import keystatic from '@keystatic/astro';
 
 export default defineConfig({
-  site: 'https://myblog.pages.dev', 
+  site: 'https://myblog-2tg.pages.dev', 
   
   // HAPUS BAGIAN EXPERIMENTAL TADI
   
